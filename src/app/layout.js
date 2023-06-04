@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={mulish.className}>
       <body>
-      <Header />
-      {children}
-      <Footer />
+        <Header />
+          {children}
+        <Footer />
       </body>
     </html>
   )

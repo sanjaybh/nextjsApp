@@ -1,9 +1,25 @@
-
 import Herosection from "@/app/components/Herosection";
 
-const About = () => {
+async function getData() {
+  const dt = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    //cache: "force-cache", //=> SSG
+    //cache: "no-store", //=> SSR
+    next: { revalidate: 10 } //=>ISR
+  });
+  return dt.json();
+}
+
+await waitUntilSymbol(4000)
+
+const About = async () => {
+    const data = await getData();
     return (
-        <Herosection title={"OUR STORY"} imageUrl ={"/about1.svg"} />
+        <div>
+            <Herosection title={"OUR STORY"} imageUrl ={"/about1.svg"} />
+            <h1>Testing - {data.title}</h1>
+
+            <p>This is our About page</p>
+        </div>
     );
 };
 
