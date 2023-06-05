@@ -9,14 +9,14 @@ async function getData() {
   return dt.json();
 }
 
-await waitUntilSymbol(4000)
+//await waitUntilSymbol(4000)
 
 const About = async () => {
     const data = await getData();
     return (
         <div>
             <Herosection title={"OUR STORY"} imageUrl ={"/about1.svg"} />
-            <h1>Testing - {data.title}</h1>
+            <h4>Testing - {data.title}</h4>
 
             <p>This is our About page</p>
         </div>

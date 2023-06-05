@@ -1,3 +1,6 @@
+// import { Provider } from 'react-redux';
+// import { wrapper } from '../store/store';
+
 import './globals.css'
 import Header from "@/app/components/Header";
 import { Mulish } from 'next/font/google';
@@ -16,12 +19,17 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
+  // const { store, props } = wrapper.useWrappedStore(rest);
+  // const { pageProps } = props;
+
   return (
     <html lang="en" className={mulish.className}>
       <body>
-        <Header />
-          {children}
-        <Footer />
+        {/* <Provider store={store}> */}
+          <Header />
+            {children}
+          <Footer />
+        {/* </Provider> */}
       </body>
     </html>
   )
